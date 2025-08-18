@@ -1,6 +1,6 @@
 
 
-# 'setwidth' R package <a href="https://github.com/dlc48/setwidth"><img src="doc/hex-.functions().png" alt="" align="right" height="138" width="125" /></a>
+# 'setwidth' R package <a href="https://github.com/dlc48/setwidth"><img src="doc/hex-setwidth.png" alt="" align="right" height="138" width="125" /></a>
 
 
 <h2>Description</h2> 

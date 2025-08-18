@@ -20,4 +20,11 @@ install.packages("devtools")
 devtools::install_github("dlc48/setwidth")
 ```
 
+<h2>Authors</h2>
+
+* Jakson Alves de Aquino [aut, cre]
+* Dominique-Laurent Couturier [maintainer]
+
+
+
 

@@ -1,5 +1,5 @@
 Package: setwidth
-Version: 1.1.0.9000
+Version: 1.1.0.9002
 Title: Automatically Set the Width Option on Terminal Emulators
 Authors@R: c(person("Jakson", "Aquino",
                      role = "aut", 

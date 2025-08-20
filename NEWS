@@ -1,9 +1,8 @@
-Version 1.0-5 (2025-08-17)
+Version 1.1-0 (2025-08-20)
 
-  - amended code to avoid mismatch between the format 
-    specifier '%d' for an 'int' type
-  - changed the declaration of setwidth_Set to take 
-    a 'void *' argument
+  - minor changes to the C code for 
+    compatibility with >=4.5.1  
+  - change of package maintainer
 
 Version 1.0-4 (2015-07-07)
 

@@ -39,15 +39,16 @@ void setwidth_Set(void *unused) // Changed to take a void pointer
             oldcolwd = columns;
 
             /* From R-exts: Evaluating R expressions from C */
-            SEXP s, t;
-            PROTECT(t = s = allocList(2));
-            SET_TYPEOF(s, LANGSXP);
-            SETCAR(t, install("options"));
-            t = CDR(t);
-            SETCAR(t, ScalarInteger((int)columns));
-            SET_TAG(t, install("width"));
-            eval(s, R_GlobalEnv);
-            UNPROTECT(1);
+            /* Create integer value for width - replaces ScalarInteger in SETCAR */
+            SEXP width_val = PROTECT(ScalarInteger((int)columns));
+            /* Use lang2() API function instead of SET_TYPEOF() to create function call */
+            SEXP options_call = PROTECT(lang2(install("options"), width_val));
+            /* Set named argument "width" - same as original but on lang2() result */
+            SET_TAG(CDR(options_call), install("width"));
+            /* Evaluate the call - unchanged from original */
+            eval(options_call, R_GlobalEnv);
+            /* Unprotect both objects (was UNPROTECT(1) for single allocation) */
+            UNPROTECT(2);
 
             if(setwidth_verbose > 2)
                 Rprintf("setwidth: %ld columns\n", columns); // Changed format specifier to %ld
